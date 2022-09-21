@@ -144,6 +144,10 @@ runoff_vs_flow <-  runoff_m3d_topnet1 %>%
   dplyr::mutate(higher_runoff = ifelse(diff > 0, 1, 0))
 
 
+#segment to check 
+check_8170268 <- runoff_vs_flow %>% 
+  dplyr::filter(catno  == "8170268")
+
 #write_parquet(runoff_vs_flow, "compare/runoff_vs_flow_topnet.parquet")
 save(runoff_vs_flow, file ="compare/runoff_vs_flow_topnet.rdata")
 
